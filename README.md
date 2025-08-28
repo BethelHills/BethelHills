@@ -1,16 +1,21 @@
-## Hi there 👋
+### Hi there, i'm Bethel 👋
 
-<!--
-**BethelHills/BethelHills** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🚀 Frontend Developer in the making  
+🌱 Learning: HTML | CSS | JavaScript | React  
+⚡ Passionate about creating responsive & user-friendly interfaces  
 
-Here are some ideas to get you started:
+## 🚀 What You'll Find Here
+- Small projects (landing pages, components, mini-apps)
+- Notes & code snippets
+- Practice challenges
+  
+### 🛠️ Tools & Tech
+- HTML, CSS, JavaScript  
+- React, TailwindCSS  
+- Git & GitHub  
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 📈 Current Focus
+Building projects → Learning in public → Growing every day ✨
+
+## 📌 Goal
+To grow step by step, problem solver, and become a professional frontend developer.
