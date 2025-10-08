@@ -1,8 +1,9 @@
-### Hi there, i'm Bethel 👋
+### Hi there, I'm Bethel 👋
 
 ## 🚀 About Me
 
 🚀 Frontend Developer in the making 
+💯 Completed The AI For Developers.2 Programme, with ALX which happens to be an AI tools, APIs, and Concepts to build a responsive smarter apps
 🔭 I'm currently learning Front-end web development (SWE) under ALX
 🌱 Learning: HTML | CSS | JavaScript | React  
 ⚡ Passionate about creating responsive website & user-friendly interfaces
