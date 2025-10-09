@@ -2,8 +2,8 @@
 
 ## 🚀 About Me
 
-🚀 Frontend Developer in the making 
-💯 Completed The AI For Developers.2 Programme, with ALX which happens to be an AI tools, APIs, and Concepts to build a responsive smarter apps
+🚀 Aspiring Front-End Developer 
+💯 Completed The AI For Developers II Program, with ALX which happens to be an AI tools, APIs, and Concepts to build a responsive smarter apps
 🔭 I'm currently learning Front-end web development (SWE) under ALX
 🌱 Learning: HTML | CSS | JavaScript | React  
 ⚡ Passionate about creating responsive website & user-friendly interfaces
@@ -12,7 +12,7 @@
 
 ## 🏆 Achievements
 🌟 Completed Professional Development Skills For the Digital Age at ALX on 5th August 2025
-
+🌟 Completed The AI For Developers II Program at ALX on 24th September 2025
 ## 🚀 What You'll Find Here
 - Small projects (landing pages, components, mini-apps)
 - Notes & code snippets
