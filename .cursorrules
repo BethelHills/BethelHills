@@ -1,0 +1,95 @@
+name: Polling App Rules
+version: 1
+
+# Purpose
+# Ensure AI-generated changes follow our Polling App architecture, conventions, and security constraints.
+
+rules:
+  - id: typescript-first
+    requires:
+      - "All code is TypeScript; export explicit types for public APIs"
+      - "Define zod schemas as single source of truth; derive types via z.infer"
+
+  - id: app-router-structure
+    requires:
+      - "Use Next.js App Router under app/"
+      - "Prefer Server Components; use Client Components for interactive UI"
+      - "Place API handlers in app/api/.../route.ts only"
+      - "Follow folder contract: app/polls/*, components/polls/*, lib/supabase/*, lib/validation/*"
+
+  - id: forms-stack
+    requires:
+      - "Use react-hook-form + @hookform/resolvers/zod"
+      - "Use shadcn/ui components: Form, FormField, Input, Button, FormMessage"
+      - "Display errors and disable submit while pending"
+
+  - id: supabase-split
+    requires:
+      - "Use lib/supabase/server.ts on server with cookies()"
+      - "Use lib/supabase/client.ts on client"
+      - "Never expose service role key in client"
+      - "Check auth server-side before privileged writes"
+
+  - id: validation-and-http
+    requires:
+      - "Validate inputs with zod on client and server"
+      - "API responses shape: { data, error } with correct HTTP status"
+      - "Never trust client-provided user_id"
+
+  - id: naming-conventions
+    requires:
+      - "Components PascalCase, routes kebab-case, functions camelCase"
+      - "Use descriptive identifiers; avoid 1–2 letter names"
+
+  - id: accessibility
+    requires:
+      - "Provide labels and FormMessage errors"
+      - "Use aria-* when relevant"
+
+folder_contract:
+  app:
+    polls:
+      - page.tsx
+      - new/page.tsx
+      - "[pollId]/page.tsx"
+      - "[pollId]/vote/page.tsx"
+    api:
+      - polls/route.ts
+      - "polls/[pollId]/route.ts"
+      - "polls/[pollId]/vote/route.ts"
+  components:
+    polls:
+      - PollForm.tsx
+      - VoteForm.tsx
+      - PollCard.tsx
+      - PollList.tsx
+    ui: "shadcn/ui components"
+  lib:
+    supabase:
+      - server.ts
+      - client.ts
+    validation:
+      - poll.ts
+    - types.ts
+
+checklist_quick:
+  - "Schemas in lib/validation; types via z.infer; no any in public APIs"
+  - "Client uses zodResolver; server uses schema.safeParse"
+  - "Auth checked server-side for writes"
+  - "API returns NextResponse.json({ data, error }, { status })"
+  - "No server modules imported in client"
+
+scaffold_examples:
+  - name: create-new-poll-form
+    prompt: |
+      Create a new poll form using react-hook-form + zod and shadcn/ui. Place UI in components/polls/PollForm.tsx, page in app/polls/new/page.tsx, schema in lib/validation/poll.ts, and API at app/api/polls/route.ts. Use Supabase server client for auth, return { data, error } with proper status codes.
+  - name: add-delete-poll-endpoint
+    prompt: |
+      Add DELETE app/api/polls/[pollId]/route.ts. Verify auth with Supabase server client, enforce owner-only delete via RLS, return 204/401/403/404. Do not import server modules into client.
+
+observations:
+  - "APIs sometimes created under pages/api; migrate to app/api"
+  - "Service role referenced in client; strictly forbidden"
+  - "Missing form error messages; must render FormMessage"
+  - "any types leaked in shared APIs; derive from zod"
+
